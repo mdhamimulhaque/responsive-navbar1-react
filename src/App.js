@@ -1,9 +1,10 @@
 import './App.css';
+import Navbar from './components/Navbar/Navbar';
 
 function App() {
   return (
-    <div className="App">
-      <h2 className='bg-red-400 text-white'>Tailwind setup with react</h2>
+    <div className="App bg-blue-50 h-screen">
+      <Navbar />
     </div>
   );
 }
