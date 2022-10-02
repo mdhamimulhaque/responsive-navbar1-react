@@ -34,30 +34,32 @@ const Navbar = () => {
 
     const [open, setOpen] = useState(false)
     return (
-        <header className='text-2xl bg-blue-400 text-white h-20 flex justify-between items-center px-20'>
+        <header className='text-2xl bg-stone-700 text-white h-20  px-3 flex justify-between items-center'>
             <div className="logo">
                 <h2 className='
                 font-bold'>Navbar-1</h2>
             </div>
-            <nav className='hidden lg:block'>
-                {
-                    navbarData.map((navItem) =>
-                        <a className='ml-5 font-semibold duration-500 hover:text-gray-700'
-                            key={navItem.id}
-                            href={navItem.path}
-                        >
-                            {navItem.name}</a>
-                    )
-                }
+            <nav>
+                <ul className={`nav_items_wrapper bg-stone-700 absolute w-full duration-500 ease-in-out lg:static lg:flex ${open ? 'top-20 h-screen' : 'top-[-2000px] h-20'}    `}>
+                    {
+                        navbarData.map((navItem) =>
+                            <li className='ml-5 font-semibold duration-500 hover:text-yellow-400 my-5'
+                                key={navItem.id}
+                                href={navItem.path}
+                            >
+                                {navItem.name}</li>
+                        )
+                    }
 
+                </ul>
             </nav>
-            <div className="responsive_menu_icon lg:hidden"
+            <div className="responsive_menu_icon h-7 w-7 text-white lg:hidden"
                 onClick={() => setOpen(!open)}
             >
                 {
                     open ?
-                        <XMarkIcon className="h-7 w-7 text-white" />
-                        : <Bars4Icon className="h-7 w-7 text-white" />
+                        <XMarkIcon />
+                        : <Bars4Icon />
                 }
 
 
